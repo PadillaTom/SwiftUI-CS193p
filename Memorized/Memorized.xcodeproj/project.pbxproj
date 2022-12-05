@@ -55,10 +55,10 @@
 		B63B0BEB293D13C4008E47F9 /* Memorized */ = {
 			isa = PBXGroup;
 			children = (
-				B6DB5DD0293DED6300514379 /* MemoryGame.swift */,
-				B6DB5DD2293DEE8700514379 /* EmojiMemoryGame.swift */,
-				B63B0BEE293D13C4008E47F9 /* ContentView.swift */,
 				B63B0BEC293D13C4008E47F9 /* MemorizedApp.swift */,
+				B63B0BEE293D13C4008E47F9 /* ContentView.swift */,
+				B6DB5DD2293DEE8700514379 /* EmojiMemoryGame.swift */,
+				B6DB5DD0293DED6300514379 /* MemoryGame.swift */,
 				B63B0BF0293D13C5008E47F9 /* Assets.xcassets */,
 				B63B0BF2293D13C5008E47F9 /* Preview Content */,
 			);

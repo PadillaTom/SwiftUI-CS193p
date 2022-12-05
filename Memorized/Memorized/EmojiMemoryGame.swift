@@ -9,7 +9,7 @@ import SwiftUI
 
 
 
-class EmojiMemoryGame {
+class EmojiMemoryGame: ObservableObject {
     
     static let emojis = ["✈️","🚝","🚁","🚗", "🚕", "🚌", "🚚", "🚎", "🏎️", "🚓", "🛺", "🚔", "🚑", "🚒", "🚐", "🚙", "🚘", "🚍", "🚃", "🛸", "🚀", "🛳️", "⛵️", "🛶"]
     
@@ -18,13 +18,21 @@ class EmojiMemoryGame {
                 pairIndex in EmojiMemoryGame.emojis[pairIndex]
             }
     }
+        
     // For our game we need to specify the "<CardContent>" type.
-    // Private(set) -> private to set, but can read.
-    private var model: MemoryGame<String> = EmojiMemoryGame.createMemoryGame()
+    // Published : we will listen to changes on this MODEL and publish a notification
+    @Published private var model: MemoryGame<String> = EmojiMemoryGame.createMemoryGame()
         
     
     // My Cards -> Array of Card (Card lives inside MemoryGame, whose CardContent type is String)
     var cards: Array<MemoryGame<String>.Card> {
-        return model.cards
+        model.cards
     }
+    
+    // MARK - Intent(s)
+    func choose( _ card: MemoryGame<String>.Card) {
+        model.choose(card)
+    }
+    
+    
 }
