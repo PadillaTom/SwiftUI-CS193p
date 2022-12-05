@@ -9,13 +9,30 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Welcome to Memorized")
+        HStack {
+            CardView()
+            CardView()
+            CardView()
+            CardView()
         }
-        .padding()
+        .padding(.horizontal)
+        .foregroundColor(.red)
+    }
+}
+
+struct CardView: View {
+    var body: some View {
+        ZStack {
+            RoundedRectangle(cornerRadius: 20)
+                .fill()
+                .foregroundColor(.white)
+            
+            RoundedRectangle(cornerRadius: 20)
+                .stroke(lineWidth: 3)
+            
+            Text("✈️")
+                .font(.largeTitle)
+        }
     }
 }
 
