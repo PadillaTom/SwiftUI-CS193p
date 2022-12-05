@@ -8,8 +8,11 @@
 import SwiftUI
 
 struct ContentView: View {
+    
     var emojis = ["✈️","🚝","🚁","🚗", "🚕", "🚌", "🚚", "🚎", "🏎️", "🚓", "🛺", "🚔", "🚑", "🚒", "🚐", "🚙", "🚘", "🚍", "🚃", "🛸", "🚀", "🛳️", "⛵️", "🛶"]
-    @State var emojiCount = 24
+    
+    @State var emojiCount = 20
+    
     var body: some View {
         VStack{
             ScrollView {
@@ -23,40 +26,14 @@ struct ContentView: View {
                 }
             }
             .foregroundColor(.red)
-            Spacer()
-            HStack {
-                removeBtn
-                Spacer()
-                addBtn
-            }
-            .padding(.horizontal)
-            .font(.largeTitle)
         }
         .padding(.horizontal)
     }
     
-    var removeBtn: some View {
-        Button(action: {
-            if emojiCount > 1 {
-                emojiCount -= 1
-            }
-        }, label: {
-           Image(systemName: "minus.circle")
-        })
-    }
-    
-    var addBtn: some View {
-        Button(action: {
-            if emojiCount < emojis.count {
-                emojiCount += 1
-            }
-        }, label: {
-            Image(systemName: "plus.circle")
-        })
-    }
 }
 
 struct CardView: View {
+    
     var cardContent: String
     @State var isFaceUp: Bool = true
     
@@ -76,6 +53,7 @@ struct CardView: View {
             isFaceUp = !isFaceUp
         }
     }
+    
 }
 
 struct ContentView_Previews: PreviewProvider {
